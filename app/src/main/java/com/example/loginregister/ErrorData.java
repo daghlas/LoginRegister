@@ -50,7 +50,7 @@ public class ErrorData extends AppCompatActivity {
         });
 
         textViewCancel.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), ErrorData.class);
             startActivity(intent);
             finish();
         });
@@ -79,9 +79,9 @@ public class ErrorData extends AppCompatActivity {
                             String result = putData.getResult();
                             if (result.equals("Uploaded Successfully")) {
                                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(intent);
-                                finish();
+                                //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                //startActivity(intent);
+                                //finish();
                             } else {
                                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
                             }

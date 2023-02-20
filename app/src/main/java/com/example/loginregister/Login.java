@@ -62,7 +62,7 @@ public class Login extends AppCompatActivity {
                             String result = putData.getResult();
                             if(result.equals("Login Success")){
                                 Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(),ErrorData.class);
                                 startActivity(intent);
                                 finish();
                             }
@@ -85,17 +85,13 @@ public class Login extends AppCompatActivity {
         builder.setIcon(R.mipmap.ic_launcher);
         builder.setMessage("Are you sure you want to exit?")
                 .setCancelable(false)
-                .setPositiveButton("No", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        //Intent play = new Intent(getApplicationContext(), Login.class);
-                        //startActivity(play);
-                    }
+                .setPositiveButton("No", (dialog, id) -> {
+                    //Intent play = new Intent(getApplicationContext(), Login.class);
+                    //startActivity(play);
                 })
-                .setNegativeButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        //finish();
-                        System.exit(0);
-                    }
+                .setNegativeButton("Yes", (dialog, id) -> {
+                    //finish();
+                    System.exit(0);
                 });
         AlertDialog alert = builder.create();
         alert.show();
